@@ -9,6 +9,9 @@
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
+        <script src="{{ asset('/sweetalert2/sweetalert2.min.js') }}"></script>
+        <link rel="stylesheet" href="{{ asset('/sweetalert2/sweetalert2.min.css') }}">
+
         <!-- Styles -->
         <style>
             html, body {
@@ -62,8 +65,18 @@
                 margin-bottom: 30px;
             }
         </style>
+        <script>
+            function myFunction() {
+                Swal.fire({
+                    title: 'Berhasil!',
+                    text: 'Memasangkan script sweet alert',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                })
+            }
+        </script>
     </head>
-    <body>
+    <body onload="myFunction()">
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
